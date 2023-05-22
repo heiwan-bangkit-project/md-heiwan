@@ -1,13 +1,10 @@
 package com.c23ps291.heiwan.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -33,7 +30,11 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_bookmark, R.id.navigation_profile, R.id.navigation_community, R.id.navigation_setting
+                R.id.navigation_home,
+                R.id.navigation_bookmark,
+                R.id.navigation_profile,
+                R.id.navigation_community,
+                R.id.navigation_setting
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
