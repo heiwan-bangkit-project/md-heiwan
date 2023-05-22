@@ -1,13 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".ui.profile.ProfileFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile" />
+        android:layout_height="wrap_content"
+        android:paddingBottom="32dp">
 
-</FrameLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="40dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_account_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+        <TextView
+            android:id="@+id/tv_label_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/text_label_name"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+
+        <TextView
+            android:id="@+id/tv_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:text="@string/dummy_user_name"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_label_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_name" />
+
+
+        <TextView
+            android:id="@+id/tv_label_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_label_email"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_profile_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_profile_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_name" />
+
+        <TextView
+            android:id="@+id/tv_profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:text="@string/dummy_user_email"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_email"
+            app:layout_constraintStart_toStartOf="@+id/tv_label_email"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_email" />
+
+        <Button
+            android:id="@+id/btn_go_to_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginTop="100dp"
+            android:backgroundTint="?attr/colorSecondaryContainer"
+            android:text="@string/btn_text_edit"
+            android:textColor="?attr/colorOnSecondaryContainer"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_profile_email"
+            app:layout_constraintStart_toStartOf="@+id/tv_profile_email"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_email" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="?attr/colorSecondaryContainer"
+            android:text="@string/btn_text_logout"
+            android:textColor="?attr/colorOnSecondaryContainer"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_go_to_edit"
+            app:layout_constraintStart_toStartOf="@+id/btn_go_to_edit"
+            app:layout_constraintTop_toBottomOf="@+id/btn_go_to_edit" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

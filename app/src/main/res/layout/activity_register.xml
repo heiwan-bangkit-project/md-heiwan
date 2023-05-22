@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="60dp"
-            android:hint="Username"
+            android:hint="@string/text_label_username"
             app:expandedHintEnabled="false"
             app:layout_constraintEnd_toEndOf="@+id/iv_register"
             app:layout_constraintStart_toStartOf="@+id/iv_register"
@@ -44,7 +44,7 @@
                 android:id="@+id/edt_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username Here"
+                android:hint="@string/text_hint_username_here"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>

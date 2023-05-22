@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Heiwan</string>
-    <string name="animal_name">Animal Name</string>
+
+    <string name="dummy_animal_name">Animal Name</string>
+    <string name="dummy_user_name">Someone User</string>
+    <string name="dummy_user_email">Someone@gmail.com</string>
 
     <string name="home">Home</string>
     <string name="bookmark">Bookmark</string>
@@ -24,5 +27,11 @@
     <string name="content_description_animal_image">animal image</string>
     <string name="content_description_login_illustration">login illustration</string>
     <string name="content_description_register_illustration">register illustration</string>
+    <string name="text_label_name">Name</string>
+    <string name="btn_text_edit">Edit</string>
+    <string name="btn_text_logout">Logout</string>
+    <string name="btn_text_change_photo">Change Photo</string>
+    <string name="text_hint_username_here">Username Here</string>
+    <string name="text_label_username">Username</string>
 
 </resources>

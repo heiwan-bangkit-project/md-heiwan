@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/animal_name"
+        android:text="@string/dummy_animal_name"
         android:textAppearance="?attr/textAppearanceTitleMedium"
         android:textSize="18sp" />
 
