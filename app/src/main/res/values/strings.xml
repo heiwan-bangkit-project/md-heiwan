@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Heiwan</string>
+    <string name="content_description_animal_image">animal image</string>
+    <string name="animal_name">Animal Name</string>
 </resources>
