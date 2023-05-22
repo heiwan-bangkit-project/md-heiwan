@@ -4,6 +4,8 @@
     <string name="dummy_animal_name">Animal Name</string>
     <string name="dummy_user_name">Someone User</string>
     <string name="dummy_user_email">Someone@gmail.com</string>
+    <string name="dummy_seller_name">Seller Name</string>
+    <string name="dummy_seller_city">Seller City</string>
 
     <string name="home">Home</string>
     <string name="bookmark">Bookmark</string>
@@ -13,10 +15,14 @@
 
     <string name="upcoming_feature">Up Coming Feature</string>
 
-    <string name="text_hint_email">Email@gmail.com</string>
     <string name="text_label_email">Email</string>
     <string name="text_label_password">Password</string>
+    <string name="text_label_name">Name</string>
+    <string name="text_label_username">Username</string>
+
     <string name="text_hint_password">Some Password</string>
+    <string name="text_hint_email">Email@gmail.com</string>
+    <string name="text_hint_username_here">Username Here</string>
 
     <string name="text_don_t_have_an_account">Don\'t have an account?</string>
     <string name="text_already_have_an_account">Already have an account?</string>
@@ -27,11 +33,12 @@
     <string name="content_description_animal_image">animal image</string>
     <string name="content_description_login_illustration">login illustration</string>
     <string name="content_description_register_illustration">register illustration</string>
-    <string name="text_label_name">Name</string>
+    <string name="content_description_chat_button">Image Button to chat with seller</string>
+
     <string name="btn_text_edit">Edit</string>
     <string name="btn_text_logout">Logout</string>
     <string name="btn_text_change_photo">Change Photo</string>
-    <string name="text_hint_username_here">Username Here</string>
-    <string name="text_label_username">Username</string>
+
+    <string name="text_value_wa_number">Wa Number : %1$s</string>
 
 </resources>

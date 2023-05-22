@@ -16,7 +16,7 @@ class EditProfileActivity : AppCompatActivity(), OnClickListener {
         binding = ActivityEditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.toolbar.setNavigationOnClickListener { finish() }
+        binding.appBarSecondary.toolbar.setNavigationOnClickListener { finish() }
         binding.btnChangePhoto.setOnClickListener(this)
         binding.btnEdit.setOnClickListener(this)
     }
