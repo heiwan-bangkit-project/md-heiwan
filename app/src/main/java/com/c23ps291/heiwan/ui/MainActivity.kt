@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var modalBottomSheet: ImageChooseBottomSheetFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -56,6 +57,16 @@ class MainActivity : AppCompatActivity() {
 
         modalBottomSheet = ImageChooseBottomSheetFragment()
 
+        binding.appBarMain.apply {
+            btnSearch.setOnClickListener {
+                val intent = Intent(this@MainActivity, SearchActivity::class.java)
+                startActivity(intent)
+            }
+            btnCamera.setOnClickListener {
+                modalBottomSheet.show(supportFragmentManager, ImageChooseBottomSheetFragment.TAG)
+            }
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -63,25 +74,4 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    // Bug hanya bisa 1 menu....
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.main_menu, menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            R.id.navigation_search -> {
-//                val intent = Intent(this, SearchActivity::class.java)
-//                startActivity(intent)
-//                true
-//            }
-//            R.id.navigation_camera -> {
-//                modalBottomSheet.show(supportFragmentManager, ImageChooseBottomSheetFragment.TAG)
-//                true
-//            }
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//        return true
-//    }
 }

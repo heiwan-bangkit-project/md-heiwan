@@ -1,6 +1,7 @@
 package com.c23ps291.heiwan.ui.search
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.c23ps291.heiwan.R
@@ -21,6 +22,9 @@ class SearchActivity : AppCompatActivity() {
 
         binding.rvAnimal.layoutManager = GridLayoutManager(this, 2)
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         initSearchBar()
     }
 
@@ -40,6 +44,18 @@ class SearchActivity : AppCompatActivity() {
                     else -> super.onOptionsItemSelected(menuItem)
                 }
             }
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+
+            android.R.id.home -> {
+                finish()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

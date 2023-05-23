@@ -17,7 +17,24 @@
             android:layout_height="?attr/actionBarSize"
             app:menu="@menu/navigation_drawer"
             app:title="@string/app_name"
-            app:liftOnScroll="true"/>
+            app:liftOnScroll="true">
+
+            <ImageView
+                android:id="@+id/btnCamera"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera"
+                android:layout_gravity="end"/>
+            <ImageView
+                android:id="@+id/btnSearch"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+                android:layout_gravity="end"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
