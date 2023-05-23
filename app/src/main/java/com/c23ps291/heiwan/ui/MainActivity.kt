@@ -1,6 +1,9 @@
 package com.c23ps291.heiwan.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -10,6 +13,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.databinding.ActivityMainBinding
+import com.c23ps291.heiwan.ui.common.ImageChooseBottomSheetFragment
+import com.c23ps291.heiwan.ui.search.SearchActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -17,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var modalBottomSheet: ImageChooseBottomSheetFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -48,10 +54,33 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        modalBottomSheet = ImageChooseBottomSheetFragment()
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.navigation_search -> {
+                val intent = Intent(this, SearchActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.navigation_camera -> {
+                modalBottomSheet.show(supportFragmentManager, ImageChooseBottomSheetFragment.TAG)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+        return true
     }
 }

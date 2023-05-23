@@ -43,5 +43,8 @@
     <string name="dummy_animal_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget rutrum velit. Sed vel purus in nibh facilisis maximus sit amet vitae lectus. Mauris interdum et elit sed congue. Aliquam maximus pharetra maximus. Fusce semper velit augue, eget condimentum velit ornare sed. Nulla vel metus leo.</string>
     <string name="btn_text_search">Search</string>
     <string name="result">Result</string>
+    <string name="search">Search</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
 
 </resources>
