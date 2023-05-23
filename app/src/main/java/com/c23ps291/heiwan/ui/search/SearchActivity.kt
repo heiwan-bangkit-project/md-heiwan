@@ -1,13 +1,11 @@
 package com.c23ps291.heiwan.ui.search
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.databinding.ActivitySearchBinding
 import com.c23ps291.heiwan.ui.common.ImageChooseBottomSheetFragment
-import com.google.android.material.search.SearchView
 
 
 class SearchActivity : AppCompatActivity() {
@@ -28,8 +26,7 @@ class SearchActivity : AppCompatActivity() {
 
     private fun initSearchBar() {
         binding.apply {
-            searchBar.performClick()
-            searchView.performClick()
+            searchView.show()
             searchView.inflateMenu(R.menu.search_menu)
             searchView.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {

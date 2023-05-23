@@ -13,15 +13,17 @@
         android:theme="@style/Theme.Heiwan"
         tools:targetApi="31">
         <activity
+            android:name=".ui.detail.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.search.SearchActivity"
             android:exported="false" />
         <activity
             android:name=".ui.search.SearchByImageActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ui.seller.SellerActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".ui.profile.EditProfileActivity"
             android:exported="false" />
