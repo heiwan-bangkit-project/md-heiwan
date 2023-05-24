@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Heiwan"
         tools:targetApi="31">
         <activity
+            android:name=".ui.seller.product.AddUpdateProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.seller.product.ListProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.detail.DetailActivity"
             android:exported="false" />
         <activity
@@ -22,7 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.search.SearchByImageActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".ui.seller.SellerActivity"
             android:exported="true" />
@@ -43,9 +49,7 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

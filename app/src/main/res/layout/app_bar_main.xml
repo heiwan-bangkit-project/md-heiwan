@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_camera"
                 android:layout_gravity="end"/>
+
             <ImageView
                 android:id="@+id/btnSearch"
                 android:layout_margin="16dp"
