@@ -7,6 +7,7 @@
     tools:context=".ui.seller.product.AddUpdateProductActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -14,122 +15,135 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:liftOnScroll="true"/>
+            tools:menu="@menu/delete_menu"
+            app:navigationIcon="@drawable/ic_back" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_profile"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="40dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_account_circle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/circleImageView" />
-
-        <Button
-            android:id="@+id/btn_change_photo"
-            style="@style/Widget.Material3.Button.TextButton"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="80dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/btn_text_edit"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/iv_profile"
-            app:layout_constraintStart_toStartOf="@+id/iv_profile"
-            app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+            android:paddingBottom="32dp">
+
+            <ImageView
+                android:id="@+id/iv_animal"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/content_description_animal_image"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_cat"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/input_layout_username"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="40dp"
-            android:hint="@string/text_label_name"
-            app:expandedHintEnabled="false"
-            app:layout_constraintEnd_toEndOf="@+id/btn_change_photo"
-            app:layout_constraintStart_toStartOf="@+id/btn_change_photo"
-            app:layout_constraintTop_toBottomOf="@+id/btn_change_photo">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_username"
+            <Button
+                android:id="@+id/btn_upload_change_photo"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_animal_name"
-                android:inputType="text" />
+                android:layout_marginHorizontal="80dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/btn_text_upload_image"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/iv_animal"
+                app:layout_constraintStart_toStartOf="@+id/iv_animal"
+                app:layout_constraintTop_toBottomOf="@+id/iv_animal" />
 
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/input_layout_email"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            android:hint="@string/hint_description"
-            app:expandedHintEnabled="false"
-            app:layout_constraintEnd_toEndOf="@+id/input_layout_username"
-            app:layout_constraintStart_toStartOf="@+id/input_layout_username"
-            app:layout_constraintTop_toBottomOf="@+id/input_layout_username">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_email"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_animal_name"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxWidth="160dp"
-                android:hint="@string/hint_description"
-                android:inputType="textMultiLine" />
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="36dp"
+                android:hint="@string/text_label_name"
+                app:expandedHintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/btn_upload_change_photo"
+                app:layout_constraintStart_toStartOf="@+id/btn_upload_change_photo"
+                app:layout_constraintTop_toBottomOf="@+id/btn_upload_change_photo">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_animal_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/dummy_animal_name"
+                    android:inputType="text" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/input_layout_phone"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            android:hint="@string/price"
-            app:expandedHintEnabled="false"
-            app:layout_constraintEnd_toEndOf="@+id/input_layout_email"
-            app:layout_constraintStart_toStartOf="@+id/input_layout_email"
-            app:layout_constraintTop_toBottomOf="@+id/input_layout_email">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_phone"
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/input_layout_animal_description"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_price"
-                android:inputType="phone" />
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:hint="@string/text_label_description"
+                app:expandedHintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/input_layout_animal_name"
+                app:layout_constraintStart_toStartOf="@+id/input_layout_animal_name"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_animal_name">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_animal_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:hint="@string/text_hint_animal_description"
+                    android:inputType="textMultiLine" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_edit"
-            style="@style/Widget.Material3.Button.TonalButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="80dp"
-            android:layout_marginBottom="36dp"
-            android:text="@string/add"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_price"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:hint="@string/text_label_price"
+                app:expandedHintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/input_layout_animal_description"
+                app:layout_constraintStart_toStartOf="@+id/input_layout_animal_description"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_animal_description">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/text_hint_price"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_update"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="80dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/text_btn_add"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/input_layout_price"
+                app:layout_constraintStart_toStartOf="@+id/input_layout_price"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_price" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
