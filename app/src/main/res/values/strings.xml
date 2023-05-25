@@ -69,4 +69,7 @@
     <string name="auth_failed">Authentication failed.</string>
     <string name="fill_the_text_field">Please Fill The Text Field</string>
 
+    <string name="choose_a_pic">Choose a Picture</string>
+    <string name="camera_failed_msg">Did not get permissions</string>
+
 </resources>
