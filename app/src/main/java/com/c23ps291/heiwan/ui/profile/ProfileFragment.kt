@@ -9,12 +9,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.databinding.FragmentProfileBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class ProfileFragment : Fragment(), OnClickListener {
 
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreateView(
@@ -23,13 +27,20 @@ class ProfileFragment : Fragment(), OnClickListener {
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        auth = Firebase.auth
 
         binding.btnGoToEdit.setOnClickListener(this)
         binding.btnLogout.setOnClickListener(this)
+        binding.apply {
+            tvProfileName.text = auth.currentUser?.displayName
+            tvProfileEmail.text = auth.currentUser?.email
+            tvProfilePhone.text = auth.currentUser?.phoneNumber ?: "-"
+        }
     }
 
     override fun onDestroyView() {
@@ -43,7 +54,10 @@ class ProfileFragment : Fragment(), OnClickListener {
                 startActivity(Intent(requireActivity(), EditProfileActivity::class.java))
             }
 
-            R.id.btn_logout -> {}
+            R.id.btn_logout -> {
+                Firebase.auth.signOut()
+                requireActivity().finish()
+            }
         }
     }
 
