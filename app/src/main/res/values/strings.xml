@@ -49,7 +49,7 @@
     <string name="search">Search</string>
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
-    
+
     <string name="dummy_animal_name">Animal Name</string>
     <string name="dummy_user_name">Someone User</string>
     <string name="dummy_user_email">Someone@gmail.com</string>
@@ -71,5 +71,12 @@
 
     <string name="choose_a_pic">Choose a Picture</string>
     <string name="camera_failed_msg">Did not get permissions</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="upcoming_features">Upcoming Features</string>
+    <string name="theme">Theme</string>
+    <string name="language">Language</string>
+    <string name="theme_title">Theme</string>
+    <string name="ok">OK</string>
 
 </resources>

@@ -25,9 +25,9 @@
 
     <fragment
         android:id="@+id/navigation_community"
-        android:name="com.c23ps291.heiwan.ui.setting.SettingFragment"
+        android:name="com.c23ps291.heiwan.ui.community.CommunityFragment"
         android:label="@string/community"
-        tools:layout="@layout/fragment_bookmark" />
+        tools:layout="@layout/fragment_community" />
 
     <fragment
         android:id="@+id/navigation_setting"

@@ -1,19 +1,8 @@
 package com.c23ps291.heiwan.ui
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.content.FileProvider
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -24,11 +13,8 @@ import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.databinding.ActivityMainBinding
 import com.c23ps291.heiwan.ui.common.ImageChooseBottomSheetFragment
 import com.c23ps291.heiwan.ui.search.SearchActivity
-import com.c23ps291.heiwan.utils.createCustomTempFile
-import com.c23ps291.heiwan.utils.uriToFile
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import java.io.File
 
 class MainActivity : AppCompatActivity() {
 
