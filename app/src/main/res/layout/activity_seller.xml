@@ -20,11 +20,9 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_seller"
@@ -118,6 +116,7 @@
                 tools:listitem="@layout/item_animal" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.core.widget.NestedScrollView>
 
 

@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 class ApiConfig {
 
     companion object{
-        private const val BASE_URL = "https://story-api.dicoding.dev/v1/"
+        private const val BASE_URL = "34.101.86.91:3000/"
 
         private val loggingInterceptor = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -33,4 +33,6 @@ class ApiConfig {
             return retrofit.create(ApiService::class.java)
         }
     }
+
+
 }

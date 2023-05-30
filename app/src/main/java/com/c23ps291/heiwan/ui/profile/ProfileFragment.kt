@@ -7,6 +7,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import coil.load
 import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -37,6 +38,7 @@ class ProfileFragment : Fragment(), OnClickListener {
         binding.btnGoToEdit.setOnClickListener(this)
         binding.btnLogout.setOnClickListener(this)
         binding.apply {
+            ivProfile.load(auth.currentUser?.photoUrl)
             tvProfileName.text = auth.currentUser?.displayName
             tvProfileEmail.text = auth.currentUser?.email
             tvProfilePhone.text = auth.currentUser?.phoneNumber ?: "-"

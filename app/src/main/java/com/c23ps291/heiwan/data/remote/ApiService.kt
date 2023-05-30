@@ -18,15 +18,12 @@ interface ApiService {
 
     @GET("get-animals")
     suspend fun getAnimals(
-        @Header("Authorization") auth: String,
-        @Query("page") page: Int? = null,
-        @Query("size") size: Int? = null,
-        @Query("location") location: Int? = null
+//        @Query("page") page: Int? = null,
+//        @Query("size") size: Int? = null
     ): AnimalResponse
 
     @GET("get-animal-by-id/{id}")
     suspend fun getAnimalById(
-        @Header("Authorization") auth: String,
         @Path("id") id : String
     ) : DetailAnimalResponse
 
