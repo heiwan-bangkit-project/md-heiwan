@@ -50,13 +50,11 @@ class RegisterActivity : AppCompatActivity(), OnClickListener {
             when {
                 (edtUsername.text?.isNotEmpty()!! && edtEmail.text?.isNotEmpty()!! &&
                         edtPassword.text?.isNotEmpty()!!) -> {
-
                     val username = edtUsername.text.toString()
                     val email = edtEmail.text.toString()
                     val pass = edtPassword.text.toString()
 
                     register(username, email, pass)
-
                 }
 
                 else -> Snackbar.make(

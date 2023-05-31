@@ -38,7 +38,7 @@
                 android:layout_marginTop="8dp"
                 android:contentDescription="@string/content_description_animal_image"
                 android:scaleType="fitCenter"
-                android:src="@drawable/img_cat"
+                android:src="@drawable/ic_person"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

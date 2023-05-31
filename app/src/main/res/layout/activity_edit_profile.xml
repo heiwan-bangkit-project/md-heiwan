@@ -58,65 +58,17 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_email"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="16dp"
-                android:hint="@string/text_label_email"
-                app:expandedHintEnabled="false"
-                app:layout_constraintEnd_toEndOf="@+id/input_layout_username"
-                app:layout_constraintStart_toStartOf="@+id/input_layout_username"
-                app:layout_constraintTop_toBottomOf="@+id/input_layout_username"
-                app:startIconDrawable="@drawable/ic_mail">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/text_hint_email"
-                    android:inputType="textEmailAddress" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_phone"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="16dp"
-                android:hint="@string/text_label_phone"
-                app:expandedHintEnabled="false"
-                app:layout_constraintEnd_toEndOf="@+id/input_layout_email"
-                app:layout_constraintStart_toStartOf="@+id/input_layout_email"
-                app:layout_constraintTop_toBottomOf="@+id/input_layout_email"
-                app:startIconDrawable="@drawable/ic_phone">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/dummy_user_phone"
-                    android:inputType="phone" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_edit"
                 style="@style/Widget.Material3.Button.TonalButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="80dp"
-                android:layout_marginTop="100dp"
-                android:text="@string/btn_text_edit"
+                android:layout_marginTop="200dp"
+                android:text="@string/btn_text_update"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/input_layout_phone"
-                app:layout_constraintStart_toStartOf="@+id/input_layout_phone"
-                app:layout_constraintTop_toBottomOf="@+id/input_layout_phone" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_username" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

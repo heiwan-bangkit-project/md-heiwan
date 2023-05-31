@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import coil.load
 import com.c23ps291.heiwan.R
+import com.c23ps291.heiwan.databinding.ActivityListProductBinding
 import com.c23ps291.heiwan.databinding.FragmentProfileBinding
+import com.c23ps291.heiwan.ui.seller.product.ListProductActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -35,8 +37,20 @@ class ProfileFragment : Fragment(), OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
 
-        binding.btnGoToEdit.setOnClickListener(this)
-        binding.btnLogout.setOnClickListener(this)
+        binding.apply {
+            btnGoToEdit.setOnClickListener(this@ProfileFragment)
+            btnGoToProduct.setOnClickListener(this@ProfileFragment)
+            btnLogout.setOnClickListener(this@ProfileFragment)
+        }
+        getProfile()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getProfile()
+    }
+
+    private fun getProfile() {
         binding.apply {
             ivProfile.load(auth.currentUser?.photoUrl)
             tvProfileName.text = auth.currentUser?.displayName
@@ -54,6 +68,10 @@ class ProfileFragment : Fragment(), OnClickListener {
         when (v?.id) {
             R.id.btn_go_to_edit -> {
                 startActivity(Intent(requireActivity(), EditProfileActivity::class.java))
+            }
+
+            R.id.btn_go_to_product -> {
+                startActivity(Intent(requireActivity(), ListProductActivity::class.java))
             }
 
             R.id.btn_logout -> {
