@@ -52,7 +52,9 @@ class ProfileFragment : Fragment(), OnClickListener {
 
     private fun getProfile() {
         binding.apply {
-            ivProfile.load(auth.currentUser?.photoUrl)
+            ivProfile.load(auth.currentUser?.photoUrl) {
+                crossfade(true)
+            }
             tvProfileName.text = auth.currentUser?.displayName
             tvProfileEmail.text = auth.currentUser?.email
             tvProfilePhone.text = auth.currentUser?.phoneNumber ?: "-"

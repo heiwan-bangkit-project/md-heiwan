@@ -79,5 +79,6 @@
     <string name="theme_title">Theme</string>
     <string name="ok">OK</string>
     <string name="btn_text_update">Update</string>
+    <string name="retry">Retry</string>
 
 </resources>

@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.c23ps291.heiwan.databinding.FragmentHomeBinding
+import com.c23ps291.heiwan.ui.common.adapter.AnimalListAdapter
+import com.c23ps291.heiwan.ui.common.adapter.LoadingStateAdapter
 import com.c23ps291.heiwan.utils.ViewModelFactory
 
 class HomeFragment : Fragment() {
@@ -29,11 +31,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rvAnimal.layoutManager = GridLayoutManager(requireActivity(), 2)
+
+        getData()
     }
 
     private fun getData() {
+        val adapter = AnimalListAdapter()
+        binding.rvAnimal.adapter = adapter.withLoadStateFooter(
+            footer = LoadingStateAdapter {
+                adapter.retry()
+            }
+        )
         viewModel.getListAnimal().observe(requireActivity()) {
-            //submit into adapter
+            adapter.submitData(lifecycle, it)
         }
     }
 

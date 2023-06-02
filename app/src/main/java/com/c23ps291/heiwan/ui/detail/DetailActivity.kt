@@ -26,7 +26,10 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getData()
+        val id = intent.getStringExtra(EXTRA_DATA)
+        if (id != null) {
+            getData(id)
+        }
         binding.apply {
             btnBack.setOnClickListener {
                 finish()
@@ -50,15 +53,15 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun getData() {
-        detailViewModel.getListAnimal().observe(this) {
+    private fun getData(id: String) {
+        detailViewModel.getAnimal(id).observe(this) {
             when (it) {
                 is Resource.Loading -> showLoadingState(true)
                 is Resource.Success -> {
                     showLoadingState(false)
-                    val data = it.data
-                    if (data != null) {
-                        //populateData(data)
+                    val animal = it.data?.data
+                    if (animal != null) {
+                        populateData(animal)
                     }
                 }
 
@@ -69,7 +72,6 @@ class DetailActivity : AppCompatActivity() {
                         it.message,
                         Toast.LENGTH_SHORT
                     ).show()
-                    finish()
                 }
             }
         }
@@ -91,6 +93,10 @@ class DetailActivity : AppCompatActivity() {
 //            }
         }
 
+    }
+
+    companion object {
+        const val EXTRA_DATA = "extra_data"
     }
 
 }

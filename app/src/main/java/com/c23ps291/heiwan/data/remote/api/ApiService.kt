@@ -1,4 +1,4 @@
-package com.c23ps291.heiwan.data.remote
+package com.c23ps291.heiwan.data.remote.api
 
 import com.c23ps291.heiwan.data.model.AnimalResponse
 import com.c23ps291.heiwan.data.model.DetailAnimalResponse
@@ -18,13 +18,12 @@ interface ApiService {
 
     @GET("get-animals")
     suspend fun getAnimals(
-//        @Query("page") page: Int? = null,
-//        @Query("size") size: Int? = null
+        @Query("page") page: Int? = null
     ): AnimalResponse
 
-    @GET("get-animal-by-id/{id}")
+    @GET("get-animal")
     suspend fun getAnimalById(
-        @Path("id") id : String
+        @Query("id") id : String
     ) : DetailAnimalResponse
 
 //    @Multipart

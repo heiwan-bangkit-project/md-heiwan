@@ -1,4 +1,4 @@
-package com.c23ps291.heiwan.data.local
+package com.c23ps291.heiwan.data.local.theme
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -37,8 +37,8 @@ class ThemeDataStore(private val context: Context) {
         private var mInstance: ThemeDataStore? = null
 
         fun getInstance(context: Context): ThemeDataStore =
-            mInstance?: synchronized(this) {
-                val newInstance = mInstance?: ThemeDataStore(context).also { mInstance = it }
+            mInstance ?: synchronized(this) {
+                val newInstance = mInstance ?: ThemeDataStore(context).also { mInstance = it }
                 newInstance
             }
     }

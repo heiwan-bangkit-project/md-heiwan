@@ -16,6 +16,7 @@
         app:cardCornerRadius="20dp">
 
         <ImageView
+            android:id="@+id/ivAnimal"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:contentDescription="@string/content_description_animal_image"
@@ -24,6 +25,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
+        android:id="@+id/tvAnimal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

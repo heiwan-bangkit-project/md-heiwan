@@ -1,7 +1,7 @@
 package com.c23ps291.heiwan.data
 
 import android.app.Application
-import com.c23ps291.heiwan.data.local.ThemeDataStore
+import com.c23ps291.heiwan.data.local.theme.ThemeDataStore
 
 class SettingRepository(
     application: Application,

@@ -1,4 +1,4 @@
-package com.c23ps291.heiwan.data.remote
+package com.c23ps291.heiwan.data.remote.api
 
 import com.c23ps291.heiwan.BuildConfig
 import okhttp3.OkHttpClient
@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 class ApiConfig {
 
     companion object{
-        private const val BASE_URL = "34.101.86.91:3000/"
+        private const val BASE_URL = "http://heiwan-api.app:3000/"
 
         private val loggingInterceptor = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
