@@ -3,6 +3,7 @@ package com.c23ps291.heiwan.ui.detail
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -27,8 +28,10 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val id = intent.getStringExtra(EXTRA_DATA)
+        Log.d("detail id", id.toString())
+
         if (id != null) {
-            getData(id)
+            getData(id.toString())
         }
         binding.apply {
             btnBack.setOnClickListener {
@@ -54,17 +57,18 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun getData(id: String) {
-        detailViewModel.getAnimal(id).observe(this) {
+        detailViewModel.getAnimal(id).observe(this@DetailActivity) {
             when (it) {
                 is Resource.Loading -> showLoadingState(true)
                 is Resource.Success -> {
                     showLoadingState(false)
-                    val animal = it.data?.data
+                    val animal = it.data?.animal?.get(0)
+                    Log.d("detail", animal?.id+ "-"+ animal?.name)
                     if (animal != null) {
                         populateData(animal)
+
                     }
                 }
-
                 is Resource.Error -> {
                     showLoadingState(false)
                     Toast.makeText(

@@ -4,11 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class AnimalResponse(
 
-//    @field:SerializedName("success")
-//    val success: String,
-//
-//    @field:SerializedName("message")
-//    val message: String?,
+    @field:SerializedName("message")
+    val message: String?,
 
     @field:SerializedName("data")
     val data: List<Animal>,
@@ -16,10 +13,7 @@ data class AnimalResponse(
     @field:SerializedName("page")
     val page: Int?,
 
-    @field:SerializedName("endingLink")
-    val endingLink: Int?,
-
-    @field:SerializedName("numberOfPages")
-    val numberOfPages: Int?,
+    @field:SerializedName("totalPages")
+    val totalPages: Int?,
 
 )

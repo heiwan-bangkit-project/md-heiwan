@@ -21,9 +21,14 @@ interface ApiService {
         @Query("page") page: Int? = null
     ): AnimalResponse
 
+    @GET("get-animal-by-name")
+    suspend fun getAnimalsByName(
+        @Query("name") page: String? = null
+    ): AnimalResponse
+
     @GET("get-animal")
     suspend fun getAnimalById(
-        @Query("id") id : String
+        @Query("id") id : String? = null
     ) : DetailAnimalResponse
 
 //    @Multipart

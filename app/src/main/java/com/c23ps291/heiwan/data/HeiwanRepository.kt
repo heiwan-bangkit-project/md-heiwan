@@ -1,5 +1,6 @@
 package com.c23ps291.heiwan.data
 
+import android.util.Log
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
@@ -50,7 +51,7 @@ class HeiwanRepository(
     fun getAnimalsByName(name: String): Flow<Resource<AnimalResponse>> = flow {
         try {
             emit(Resource.Loading())
-            val response = apiService.getAnimals()// ganti ke getbyname kl udah jdi
+            val response = apiService.getAnimalsByName(name)
             emit(Resource.Success(response))
         } catch (exception: Exception) {
             val e = (exception as? HttpException)?.response()?.errorBody()?.string()
