@@ -13,7 +13,7 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             app:title="@string/app_name"
             app:liftOnScroll="true">
 
@@ -34,16 +34,6 @@
         app:iconifiedByDefault="false"
         android:hint="@string/search"
         app:layout_anchor="@id/searchBar">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSearch"
-            android:paddingTop="8dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            tools:listitem="@layout/item_animal"
-            tools:spanCount="2"/>
     </com.google.android.material.search.SearchView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,6 +53,14 @@
             tools:listitem="@layout/item_animal" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
