@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 class ApiConfig {
 
     companion object{
-        private const val BASE_URL = "http://heiwan-api.app:3000/"
+        private const val BASE_URL = "https://heiwan-api.app/"
 
         private val loggingInterceptor = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
