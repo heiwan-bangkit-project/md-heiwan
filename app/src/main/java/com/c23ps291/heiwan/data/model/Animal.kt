@@ -16,9 +16,9 @@ data class Animal(
     @field:SerializedName("description")
     val description: String?,
 
-//    @field:SerializedName("photo")
-//    val photo: String?,
-//
+    @field:SerializedName("image")
+    val image: String?,
+
     @field:SerializedName("price")
     val price: String?
 

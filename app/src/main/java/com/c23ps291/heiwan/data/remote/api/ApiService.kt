@@ -2,10 +2,10 @@ package com.c23ps291.heiwan.data.remote.api
 
 import com.c23ps291.heiwan.data.model.AnimalResponse
 import com.c23ps291.heiwan.data.model.DetailAnimalResponse
+import com.c23ps291.heiwan.data.model.PredResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Multipart
@@ -30,6 +30,12 @@ interface ApiService {
     suspend fun getAnimalById(
         @Query("id") id : String? = null
     ) : DetailAnimalResponse
+
+    @Multipart
+    @POST("pred")
+    suspend fun getPred(
+        @Part image: MultipartBody.Part,
+    ): PredResponse
 
 //    @Multipart
 //    @POST("store-animal")

@@ -13,7 +13,6 @@ import com.c23ps291.heiwan.data.model.Animal
 import com.c23ps291.heiwan.databinding.ActivitySearchBinding
 import com.c23ps291.heiwan.ui.common.ImageChooseBottomSheetFragment
 import com.c23ps291.heiwan.ui.common.adapter.AnimalAdapter
-import com.c23ps291.heiwan.ui.detail.DetailViewModel
 import com.c23ps291.heiwan.utils.Resource
 import com.c23ps291.heiwan.utils.ViewModelFactory
 
@@ -43,15 +42,26 @@ class SearchActivity : AppCompatActivity() {
         binding.apply {
             searchView
                 .editText
-                .setOnEditorActionListener { textView, actionId, event ->
+                .setOnEditorActionListener { _, _, _ ->
                     searchBar.text = searchView.text
                     searchView.hide()
-                    Toast.makeText(this@SearchActivity, searchView.text, Toast.LENGTH_SHORT).show()
                     getData(searchView.text.toString())
                     showLoadingState(true)
                     false
                 }
         }
+
+        val animName = intent.getStringExtra(SEARCH_ANIMAL)
+
+        if (animName != null) {
+            getData(animName.toString())
+            binding.apply {
+                searchView.setText(animName)
+                searchBar.text = animName
+                searchView.hide()
+            }
+        }
+
     }
 
     private fun initSearchBar() {
@@ -116,5 +126,9 @@ class SearchActivity : AppCompatActivity() {
 
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    companion object {
+        const val SEARCH_ANIMAL = "search_animal"
     }
 }

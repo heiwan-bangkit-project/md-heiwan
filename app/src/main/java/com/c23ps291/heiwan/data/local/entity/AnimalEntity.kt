@@ -21,9 +21,9 @@ data class AnimalEntity(
     @ColumnInfo("description")
     val description: String?,
 
-//    @ColumnInfo("photo")
-//    val photo: String?,
-//
+    @ColumnInfo("image")
+    val image: String?,
+
     @ColumnInfo("price")
     val price: String?
 

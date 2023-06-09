@@ -9,6 +9,7 @@ import com.c23ps291.heiwan.data.local.entity.AnimalEntity
 import com.c23ps291.heiwan.data.local.roomdb.AnimalDatabase
 import com.c23ps291.heiwan.data.model.AnimalResponse
 import com.c23ps291.heiwan.data.model.DetailAnimalResponse
+import com.c23ps291.heiwan.data.model.PredResponse
 import com.c23ps291.heiwan.data.remote.AnimalRemoteMediator
 import com.c23ps291.heiwan.data.remote.api.ApiService
 import com.c23ps291.heiwan.utils.Resource
@@ -16,23 +17,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import okhttp3.MultipartBody
 import retrofit2.HttpException
+import java.io.File
 
 @OptIn(ExperimentalPagingApi::class)
 class HeiwanRepository(
     private val animalDatabase: AnimalDatabase,
     private val apiService: ApiService
 ) {
-//    fun getAnimals(): Flow<Resource<AnimalResponse>> = flow {
-//        try {
-//            emit(Resource.Loading())
-//            val response = apiService.getAnimals()
-//            emit(Resource.Success(response))
-//        } catch (exception: Exception) {
-//            val e = (exception as? HttpException)?.response()?.errorBody()?.string()
-//            emit(Resource.Error(e.toString()))
-//        }
-//    }.flowOn(Dispatchers.IO)
 
     fun getAnimals(): Flow<PagingData<AnimalEntity>> {
 
@@ -70,5 +63,14 @@ class HeiwanRepository(
         }
     }.flowOn(Dispatchers.IO)
 
-
+    fun getPred(image: MultipartBody.Part): Flow<Resource<PredResponse>> = flow {
+        try {
+            emit(Resource.Loading())
+            val response = apiService.getPred(image)
+            emit(Resource.Success(response))
+        } catch (exception: Exception) {
+            val e = (exception as? HttpException)?.response()?.errorBody()?.string()
+            emit(Resource.Error(e.toString()))
+        }
+    }.flowOn(Dispatchers.IO)
 }

@@ -4,6 +4,8 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.data.model.Animal
 import com.c23ps291.heiwan.databinding.ItemAnimalBinding
 import com.c23ps291.heiwan.ui.detail.DetailActivity
@@ -27,12 +29,13 @@ class AnimalAdapter(private val listAnimal: List<Animal>): RecyclerView.Adapter<
         fun bind(data: Animal) {
             binding.apply {
                 tvAnimal.text = data.name
-//                ivAnimal.load(data.photoUrl) {
-//                    crossfade(true)
-//                    placeholder(R.drawable.placeholder_img)
-//                    error(R.drawable.placeholder_img)
-//                }
+                ivAnimal.load(data.image) {
+                    crossfade(true)
+                    placeholder(R.drawable.placeholder_img)
+                    error(R.drawable.placeholder_img)
+                }
             }
+
             itemView.setOnClickListener {
 //                val optionsCompat: ActivityOptionsCompat =
 //                    ActivityOptionsCompat.makeSceneTransitionAnimation(

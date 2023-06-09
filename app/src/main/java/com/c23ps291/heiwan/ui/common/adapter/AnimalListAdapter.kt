@@ -39,11 +39,11 @@ class AnimalListAdapter :
         fun bind(data: AnimalEntity) {
             binding.apply {
                 tvAnimal.text = data.name
-//                ivAnimal.load(data.photoUrl) {
-//                    crossfade(true)
-//                    placeholder(R.drawable.placeholder_img)
-//                    error(R.drawable.placeholder_img)
-//                }
+                ivAnimal.load(data.image) {
+                    crossfade(true)
+                    placeholder(R.drawable.placeholder_img)
+                    error(R.drawable.placeholder_img)
+                }
             }
             itemView.setOnClickListener {
 //                val optionsCompat: ActivityOptionsCompat =

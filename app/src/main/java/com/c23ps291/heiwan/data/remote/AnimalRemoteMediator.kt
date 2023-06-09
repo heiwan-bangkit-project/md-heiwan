@@ -70,6 +70,7 @@ class AnimalRemoteMediator(
                         it.id,
                         it.name,
                         it.description,
+                        it.image,
                         it.price
                     )
                 }

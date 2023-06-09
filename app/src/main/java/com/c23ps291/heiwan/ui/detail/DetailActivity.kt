@@ -28,7 +28,6 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val id = intent.getStringExtra(EXTRA_DATA)
-        Log.d("detail id", id.toString())
 
         if (id != null) {
             getData(id.toString())
@@ -66,7 +65,6 @@ class DetailActivity : AppCompatActivity() {
                     Log.d("detail", animal?.id+ "-"+ animal?.name)
                     if (animal != null) {
                         populateData(animal)
-
                     }
                 }
                 is Resource.Error -> {
@@ -90,11 +88,11 @@ class DetailActivity : AppCompatActivity() {
         binding.apply {
             tvAnimalName.text = data.name
             tvDescription.text = data.description
-//            ivAnimal.load(data.photoUrl) {
-//                crossfade(true)
-//                placeholder(R.drawable.placeholder_img)
-//                error(R.drawable.placeholder_img)
-//            }
+            ivAnimal.load(data.image) {
+                crossfade(true)
+                placeholder(R.drawable.placeholder_img)
+                error(R.drawable.placeholder_img)
+            }
         }
 
     }

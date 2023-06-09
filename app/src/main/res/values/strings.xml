@@ -80,5 +80,7 @@
     <string name="ok">OK</string>
     <string name="btn_text_update">Update</string>
     <string name="retry">Retry</string>
+    <string name="scan">scan</string>
+    <string name="result_of_image_recognition">Result of image recognition</string>
 
 </resources>
