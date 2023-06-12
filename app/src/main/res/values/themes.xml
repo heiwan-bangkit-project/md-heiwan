@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="Base.Theme.Heiwan" parent="Theme.Material3.DayNight.NoActionBar">
 
@@ -32,7 +32,7 @@
 
     <style name="Theme.Heiwan" parent="Base.Theme.Heiwan" />
 
-    <style name="circleImageView" >
+    <style name="circleImageView">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>

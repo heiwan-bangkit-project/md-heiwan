@@ -1,31 +1,28 @@
 package com.c23ps291.heiwan.ui.common.adapter
 
-import android.app.Activity
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.app.ActivityOptionsCompat
-import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import androidx.core.util.Pair
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.data.local.entity.AnimalEntity
 import com.c23ps291.heiwan.databinding.ItemAnimalBinding
+import com.c23ps291.heiwan.ui.common.adapter.AnimalListAdapter.AnimalViewHolder
 import com.c23ps291.heiwan.ui.detail.DetailActivity
 
 class AnimalListAdapter :
-    PagingDataAdapter<AnimalEntity, AnimalListAdapter.StoryViewHolder>(DIFF_CALLBACK) {
+    PagingDataAdapter<AnimalEntity, AnimalViewHolder>(DIFF_CALLBACK) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoryViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimalViewHolder {
         val itemAnimalBinding =
             ItemAnimalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return StoryViewHolder(itemAnimalBinding)
+        return AnimalViewHolder(itemAnimalBinding)
     }
 
-    override fun onBindViewHolder(holder: StoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AnimalViewHolder, position: Int) {
         val data = getItem(position)
         if (data != null) {
             holder.bind(data)
@@ -33,7 +30,7 @@ class AnimalListAdapter :
 
     }
 
-    class StoryViewHolder(private val binding: ItemAnimalBinding) :
+    inner class AnimalViewHolder(private val binding: ItemAnimalBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(data: AnimalEntity) {
@@ -66,7 +63,7 @@ class AnimalListAdapter :
 
             override fun areContentsTheSame(
                 oldItem: AnimalEntity,
-                newItem: AnimalEntity
+                newItem: AnimalEntity,
             ): Boolean {
                 return oldItem.id == newItem.id
             }

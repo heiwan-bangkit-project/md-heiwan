@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiConfig {
 
-    companion object{
+    companion object {
         private const val BASE_URL = "https://heiwan-api.app/"
 
         private val loggingInterceptor = if (BuildConfig.DEBUG) {

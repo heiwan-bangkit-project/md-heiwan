@@ -5,5 +5,5 @@
         android:id="@+id/navigation_camera"
         android:icon="@drawable/ic_camera"
         android:title="@string/camera"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 </menu>

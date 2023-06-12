@@ -9,7 +9,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.databinding.ActivitySearchByImageBinding
-import com.c23ps291.heiwan.ui.detail.DetailActivity
 import com.c23ps291.heiwan.utils.Resource
 import com.c23ps291.heiwan.utils.ViewModelFactory
 import com.c23ps291.heiwan.utils.reduceFileImage
@@ -78,6 +77,7 @@ class SearchByImageActivity : AppCompatActivity() {
                     binding.tvAnimalName.text = it.data?.data ?: ""
                     animalName = it.data?.data
                 }
+
                 is Resource.Error -> {
                     showLoadingState(false)
                     Toast.makeText(

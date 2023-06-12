@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.seller.product.AddUpdateProductActivity">
+    tools:context=".ui.seller.product.crudproduct.AddUpdateProductActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -15,8 +15,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            tools:menu="@menu/delete_menu"
-            app:navigationIcon="@drawable/ic_back" />
+            app:navigationIcon="@drawable/ic_back"
+            tools:menu="@menu/delete_menu" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -38,7 +38,7 @@
                 android:layout_marginTop="8dp"
                 android:contentDescription="@string/content_description_animal_image"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_person"
+                android:src="@drawable/ic_image_pet"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -146,4 +146,11 @@
 
     </androidx.core.widget.NestedScrollView>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -24,7 +24,6 @@
     </queries>
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -33,12 +32,13 @@
         android:roundIcon="@mipmap/ic_launcher_heiwan_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Heiwan"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.seller.product.AddUpdateProductActivity"
-            android:exported="false"/>
+            android:name=".ui.seller.product.crudproduct.AddUpdateProductActivity"
+            android:exported="false" />
         <activity
-            android:name=".ui.seller.product.ListProductActivity"
+            android:name=".ui.seller.product.listproduct.ListProductActivity"
             android:exported="false" />
         <activity
             android:name=".ui.detail.DetailActivity"
@@ -69,7 +69,8 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.c23ps291.heiwan"

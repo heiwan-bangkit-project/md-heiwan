@@ -1,7 +1,7 @@
 package com.c23ps291.heiwan.ui.search
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -12,7 +12,9 @@ import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.data.model.Animal
 import com.c23ps291.heiwan.databinding.ActivitySearchBinding
 import com.c23ps291.heiwan.ui.common.ImageChooseBottomSheetFragment
+import com.c23ps291.heiwan.ui.common.OnItemClickCallback
 import com.c23ps291.heiwan.ui.common.adapter.AnimalAdapter
+import com.c23ps291.heiwan.ui.detail.DetailActivity
 import com.c23ps291.heiwan.utils.Resource
 import com.c23ps291.heiwan.utils.ViewModelFactory
 
@@ -77,6 +79,7 @@ class SearchActivity : AppCompatActivity() {
                         )
                         true
                     }
+
                     else -> super.onOptionsItemSelected(menuItem)
                 }
             }
@@ -91,6 +94,7 @@ class SearchActivity : AppCompatActivity() {
                     showLoadingState(false)
                     it.data?.data?.let { it1 -> populateData(it1) }
                 }
+
                 is Resource.Error -> {
                     showLoadingState(false)
                     Toast.makeText(
@@ -104,7 +108,13 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun populateData(data: List<Animal>) {
-        animalAdapter = AnimalAdapter(data)
+        animalAdapter = AnimalAdapter(data, object : OnItemClickCallback {
+            override fun onItemClicked(animal: Animal) {
+                val intent = Intent(this@SearchActivity, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.EXTRA_DATA, animal.id)
+                startActivity(intent)
+            }
+        })
         binding.rvAnimal.apply {
             layoutManager = GridLayoutManager(this@SearchActivity, 2)
             setHasFixedSize(true)

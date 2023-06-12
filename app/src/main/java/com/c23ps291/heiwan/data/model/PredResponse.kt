@@ -13,4 +13,4 @@ data class PredResponse(
     @field:SerializedName("data")
     val data: String,
 
-)
+    )

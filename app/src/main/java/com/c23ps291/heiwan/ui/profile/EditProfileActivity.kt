@@ -46,6 +46,7 @@ class EditProfileActivity : AppCompatActivity(), OnClickListener {
                 (edtUsername.text?.isNotEmpty()!!) -> {
                     updateProfile()
                 }
+
                 else -> Snackbar.make(
                     binding.root as ViewGroup,
                     R.string.fill_the_text_field,

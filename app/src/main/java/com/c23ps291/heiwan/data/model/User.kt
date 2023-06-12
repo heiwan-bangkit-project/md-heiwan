@@ -2,8 +2,9 @@ package com.c23ps291.heiwan.data.model
 
 import com.google.gson.annotations.SerializedName
 
+
 data class User(
-    @field:SerializedName("id")
+    @field:SerializedName("uuid")
     val id: String,
 
     @field:SerializedName("name")
@@ -15,6 +16,6 @@ data class User(
     @field:SerializedName("phone")
     val phoneNumber: String?,
 
-    @field:SerializedName("bookmark")
-    val bookmark: List<Animal>
+    // @field:SerializedName("bookmark")
+    // val bookmark: List<Animal>
 )

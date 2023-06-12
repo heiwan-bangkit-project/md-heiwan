@@ -1,13 +1,11 @@
 package com.c23ps291.heiwan.ui.community
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.c23ps291.heiwan.R
+import androidx.fragment.app.Fragment
 import com.c23ps291.heiwan.databinding.FragmentCommunityBinding
-import com.c23ps291.heiwan.databinding.FragmentProfileBinding
 
 
 class CommunityFragment : Fragment() {
@@ -17,7 +15,7 @@ class CommunityFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentCommunityBinding.inflate(inflater, container, false)
         return binding.root

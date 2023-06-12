@@ -46,7 +46,7 @@ class LoginActivity : AppCompatActivity(), OnClickListener {
     override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
-        if(currentUser != null){
+        if (currentUser != null) {
             reload()
         }
     }
@@ -77,6 +77,7 @@ class LoginActivity : AppCompatActivity(), OnClickListener {
         }
 
     }
+
     private fun login(email: String, password: String) {
         showLoadingState(true)
         auth.signInWithEmailAndPassword(email, password)
@@ -126,6 +127,7 @@ class LoginActivity : AppCompatActivity(), OnClickListener {
             R.id.btn_login -> {
                 validation()
             }
+
             R.id.btn_go_to_register -> {
                 startActivity(
                     Intent(this@LoginActivity, RegisterActivity::class.java)

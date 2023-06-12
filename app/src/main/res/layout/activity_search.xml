@@ -14,15 +14,15 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="@string/app_name"
-            app:liftOnScroll="true">
+            app:liftOnScroll="true"
+            app:title="@string/app_name">
 
             <com.google.android.material.search.SearchBar
                 android:id="@+id/searchBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:hint="@string/search"/>
+                android:hint="@string/search" />
         </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -31,15 +31,15 @@
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:iconifiedByDefault="false"
         android:hint="@string/search"
-        app:layout_anchor="@id/searchBar">
-    </com.google.android.material.search.SearchView>
+        app:iconifiedByDefault="false"
+        app:layout_anchor="@id/searchBar"></com.google.android.material.search.SearchView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_animal"
             android:layout_width="match_parent"
@@ -58,9 +58,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

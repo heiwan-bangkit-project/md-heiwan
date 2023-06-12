@@ -7,18 +7,32 @@ import com.c23ps291.heiwan.di.Injection
 import com.c23ps291.heiwan.ui.detail.DetailViewModel
 import com.c23ps291.heiwan.ui.home.HomeViewModel
 import com.c23ps291.heiwan.ui.search.SearchViewModel
+import com.c23ps291.heiwan.ui.seller.product.crudproduct.AddUpdateProductViewModel
+import com.c23ps291.heiwan.ui.seller.product.listproduct.ListProductViewModel
 
 class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return HomeViewModel(Injection.provideRepository(context)) as T
-        } else if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return DetailViewModel(Injection.provideRepository(context)) as T
-        } else if (modelClass.isAssignableFrom(SearchViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return SearchViewModel(Injection.provideRepository(context)) as T
+        when {
+            modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
+                return HomeViewModel(Injection.provideRepository(context)) as T
+            }
+
+            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
+                return DetailViewModel(Injection.provideRepository(context)) as T
+            }
+
+            modelClass.isAssignableFrom(SearchViewModel::class.java) -> {
+                return SearchViewModel(Injection.provideRepository(context)) as T
+            }
+
+            modelClass.isAssignableFrom(AddUpdateProductViewModel::class.java) -> {
+                return AddUpdateProductViewModel(Injection.provideRepository(context)) as T
+            }
+
+            modelClass.isAssignableFrom(ListProductViewModel::class.java) -> {
+                return ListProductViewModel(Injection.provideRepository(context)) as T
+            }
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

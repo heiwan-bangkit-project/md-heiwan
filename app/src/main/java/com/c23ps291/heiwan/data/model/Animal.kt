@@ -20,6 +20,6 @@ data class Animal(
     val image: String?,
 
     @field:SerializedName("price")
-    val price: String?
+    val price: String?,
 
-) : Parcelable
+    ) : Parcelable

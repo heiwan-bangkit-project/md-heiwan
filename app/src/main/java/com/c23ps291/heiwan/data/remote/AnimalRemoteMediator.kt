@@ -14,7 +14,7 @@ import com.c23ps291.heiwan.data.remote.api.ApiService
 @OptIn(ExperimentalPagingApi::class)
 class AnimalRemoteMediator(
     private val database: AnimalDatabase,
-    private val apiService: ApiService
+    private val apiService: ApiService,
 ) : RemoteMediator<Int, AnimalEntity>() {
 
     private companion object {
@@ -27,19 +27,21 @@ class AnimalRemoteMediator(
 
     override suspend fun load(
         loadType: LoadType,
-        state: PagingState<Int, AnimalEntity>
+        state: PagingState<Int, AnimalEntity>,
     ): MediatorResult {
         val page = when (loadType) {
-            LoadType.REFRESH ->{
+            LoadType.REFRESH -> {
                 val remoteKeys = getRemoteKeyClosestToCurrentPosition(state)
                 remoteKeys?.nextKey?.minus(1) ?: INITIAL_PAGE_INDEX
             }
+
             LoadType.PREPEND -> {
                 val remoteKeys = getRemoteKeyForFirstItem(state)
                 val prevKey = remoteKeys?.prevKey
                     ?: return MediatorResult.Success(endOfPaginationReached = remoteKeys != null)
                 prevKey
             }
+
             LoadType.APPEND -> {
                 val remoteKeys = getRemoteKeyForLastItem(state)
                 val nextKey = remoteKeys?.nextKey

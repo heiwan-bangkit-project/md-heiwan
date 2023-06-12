@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.databinding.ActivityRegisterBinding
 import com.c23ps291.heiwan.ui.MainActivity
-import com.c23ps291.heiwan.ui.login.LoginActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -36,7 +35,7 @@ class RegisterActivity : AppCompatActivity(), OnClickListener {
         super.onStart()
 
         val currentUser = auth.currentUser
-        if(currentUser != null){
+        if (currentUser != null) {
             reload()
         }
     }
@@ -124,6 +123,7 @@ class RegisterActivity : AppCompatActivity(), OnClickListener {
             R.id.btn_register -> {
                 validation()
             }
+
             R.id.btn_go_to_login -> finish()
         }
     }

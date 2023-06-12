@@ -1,17 +1,15 @@
 package com.c23ps291.heiwan.ui.detail
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.data.model.Animal
 import com.c23ps291.heiwan.databinding.ActivityDetailBinding
-import com.c23ps291.heiwan.ui.seller.SellerActivity
 import com.c23ps291.heiwan.utils.Resource
 import com.c23ps291.heiwan.utils.ViewModelFactory
 
@@ -62,11 +60,12 @@ class DetailActivity : AppCompatActivity() {
                 is Resource.Success -> {
                     showLoadingState(false)
                     val animal = it.data?.animal?.get(0)
-                    Log.d("detail", animal?.id+ "-"+ animal?.name)
+                    Log.d("detail", animal?.id + "-" + animal?.name)
                     if (animal != null) {
                         populateData(animal)
                     }
                 }
+
                 is Resource.Error -> {
                     showLoadingState(false)
                     Toast.makeText(

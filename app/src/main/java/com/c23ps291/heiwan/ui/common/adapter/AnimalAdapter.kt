@@ -1,6 +1,5 @@
 package com.c23ps291.heiwan.ui.common.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,9 +7,12 @@ import coil.load
 import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.data.model.Animal
 import com.c23ps291.heiwan.databinding.ItemAnimalBinding
-import com.c23ps291.heiwan.ui.detail.DetailActivity
+import com.c23ps291.heiwan.ui.common.OnItemClickCallback
 
-class AnimalAdapter(private val listAnimal: List<Animal>): RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder>() {
+class AnimalAdapter(
+    private val listAnimal: List<Animal>,
+    private val onItemClickCallback: OnItemClickCallback,
+) : RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimalViewHolder {
         val item = ItemAnimalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,7 +25,7 @@ class AnimalAdapter(private val listAnimal: List<Animal>): RecyclerView.Adapter<
         holder.bind(listAnimal[position])
     }
 
-    class AnimalViewHolder(private val binding: ItemAnimalBinding) :
+    inner class AnimalViewHolder(private val binding: ItemAnimalBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(data: Animal) {
@@ -37,14 +39,7 @@ class AnimalAdapter(private val listAnimal: List<Animal>): RecyclerView.Adapter<
             }
 
             itemView.setOnClickListener {
-//                val optionsCompat: ActivityOptionsCompat =
-//                    ActivityOptionsCompat.makeSceneTransitionAnimation(
-//                        itemView.context as Activity,
-//                        Pair(binding.ivPhoto, "imageStory"),
-//                    )
-                val intent = Intent(itemView.context, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_DATA, data.id)
-                itemView.context.startActivity(intent)
+                onItemClickCallback.onItemClicked(data)
             }
         }
     }

@@ -9,9 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import coil.load
 import com.c23ps291.heiwan.R
-import com.c23ps291.heiwan.databinding.ActivityListProductBinding
 import com.c23ps291.heiwan.databinding.FragmentProfileBinding
-import com.c23ps291.heiwan.ui.seller.product.ListProductActivity
+import com.c23ps291.heiwan.ui.seller.product.listproduct.ListProductActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -73,7 +72,8 @@ class ProfileFragment : Fragment(), OnClickListener {
             }
 
             R.id.btn_go_to_product -> {
-                startActivity(Intent(requireActivity(), ListProductActivity::class.java))
+                val goToProduct = Intent(requireActivity(), ListProductActivity::class.java)
+                startActivity(goToProduct)
             }
 
             R.id.btn_logout -> {

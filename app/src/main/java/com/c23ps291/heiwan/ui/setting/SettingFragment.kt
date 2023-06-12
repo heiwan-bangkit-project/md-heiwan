@@ -1,11 +1,11 @@
 package com.c23ps291.heiwan.ui.setting
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.c23ps291.heiwan.R
 import com.c23ps291.heiwan.databinding.FragmentSettingBinding
@@ -20,7 +20,7 @@ class SettingFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentSettingBinding.inflate(inflater, container, false)
         return binding?.root
@@ -49,9 +49,11 @@ class SettingFragment : Fragment() {
                 0 -> {
                     0
                 }
+
                 1 -> {
                     1
                 }
+
                 else -> {
                     2
                 }
@@ -70,11 +72,13 @@ class SettingFragment : Fragment() {
                     viewModel.saveThemeSetting(0)
                     checkedTheme = 0
                 }
+
                 1 -> {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     viewModel.saveThemeSetting(1)
                     checkedTheme = 1
                 }
+
                 else -> {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                     viewModel.saveThemeSetting(2)
@@ -86,33 +90,37 @@ class SettingFragment : Fragment() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(resources.getString(R.string.theme_title))
             .setSingleChoiceItems(singleItems, checkedTheme) { _, which ->
-                when(which) {
-                    0 ->{
+                when (which) {
+                    0 -> {
                         checkedTheme = 0
                     }
-                    1 ->{
+
+                    1 -> {
                         checkedTheme = 1
                     }
-                    2 ->{
+
+                    2 -> {
                         checkedTheme = 2
                     }
                 }
             }
-            .setNegativeButton("Cancel") { dialog,_ ->
+            .setNegativeButton("Cancel") { dialog, _ ->
                 dialog.cancel()
             }
             .setPositiveButton(resources.getString(R.string.ok)) { _, _ ->
-                when(checkedTheme) {
-                    0 ->{
+                when (checkedTheme) {
+                    0 -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                         viewModel.saveThemeSetting(0)
                     }
-                    1 ->{
+
+                    1 -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                         viewModel.saveThemeSetting(1)
 
                     }
-                    2 ->{
+
+                    2 -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                         viewModel.saveThemeSetting(2)
                     }

@@ -1,10 +1,8 @@
 package com.c23ps291.heiwan.ui.common
 
 import android.Manifest
-import android.R.attr.bitmap
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -34,7 +32,7 @@ class ImageChooseBottomSheetFragment : BottomSheetDialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentImageChooseBottomSheetBinding.inflate(inflater, container, false)
         return binding?.root
@@ -113,7 +111,7 @@ class ImageChooseBottomSheetFragment : BottomSheetDialogFragment() {
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
-        grantResults: IntArray
+        grantResults: IntArray,
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == REQUEST_CODE_PERMISSIONS) {

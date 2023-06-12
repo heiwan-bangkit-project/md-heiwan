@@ -2,9 +2,16 @@ package com.c23ps291.heiwan.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class UploadResponse(
+data class ProductsResponse(
+
+    @field:SerializedName("data")
+    val data: List<Animal>,
+
     @field:SerializedName("success")
-    val success: String?,
+    val success: Boolean? = null,
+
     @field:SerializedName("message")
-    val message: String?
+    val message: String? = null,
 )
+
+

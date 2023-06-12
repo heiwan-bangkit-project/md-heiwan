@@ -12,6 +12,6 @@
         android:gravity="center"
         android:text="@string/upcoming_features"
         android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 </FrameLayout>

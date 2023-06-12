@@ -16,4 +16,4 @@ data class AnimalResponse(
     @field:SerializedName("totalPages")
     val totalPages: Int?,
 
-)
+    )
