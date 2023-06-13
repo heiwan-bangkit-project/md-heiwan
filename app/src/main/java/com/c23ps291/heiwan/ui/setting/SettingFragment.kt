@@ -1,6 +1,8 @@
 package com.c23ps291.heiwan.ui.setting
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,7 +36,7 @@ class SettingFragment : Fragment() {
         binding?.apply {
 
             btnLocalization.setOnClickListener {
-                //localization action
+                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
             }
             btnTheme.setOnClickListener {
                 themeDialog()

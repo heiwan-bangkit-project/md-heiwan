@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">Heiwan</string>
+
+    <string name="home">Beranda</string>
+    <string name="bookmark">Penanda</string>
+    <string name="profile">Profil</string>
+    <string name="setting">Pengaturan</string>
+    <string name="community">Komunitas</string>
+
+    <string name="upcoming_feature">Fitur yang Akan Datang</string>
+
+    <string name="text_label_email">Email</string>
+    <string name="text_label_password">Kata Sandi</string>
+    <string name="text_label_name">Nama</string>
+    <string name="text_label_username">Nama Pengguna</string>
+    <string name="text_label_description">Deskripsi</string>
+    <string name="text_label_phone">Telepon</string>
+    <string name="text_label_price">Harga</string>
+
+    <string name="text_hint_password">Beberapa Kata Sandi</string>
+    <string name="text_hint_email">Email@gmail.com</string>
+    <string name="text_hint_username_here">Nama Pengguna Disini</string>
+    <string name="text_hint_animal_description">Deskripsi Hewan</string>
+    <string name="text_hint_price">Rp. x.xxx.xxx</string>
+
+    <string name="text_don_t_have_an_account">Belum punya akun?</string>
+    <string name="text_already_have_an_account">Sudah punya akun?</string>
+
+    <string name="btn_text_login">Masuk</string>
+    <string name="btn_text_register">Daftar</string>
+
+    <string name="content_description_animal_image">gambar hewan</string>
+    <string name="content_description_login_illustration">ilustrasi masuk</string>
+    <string name="content_description_register_illustration">ilustrasi daftar</string>
+    <string name="content_description_chat_button">Tombol gambar untuk mengobrol dengan penjual</string>
+    <string name="content_description_no_data">Gambar tanpa data</string>
+
+    <string name="btn_text_edit">Sunting</string>
+    <string name="btn_text_logout">Keluar</string>
+    <string name="btn_text_change_photo">Ubah Foto</string>
+    <string name="btn_text_upload_image">Unggah Gambar</string>
+    <string name="btn_text_change_image">Ubah Gambar</string>
+    <string name="text_btn_update">Perbarui</string>
+    <string name="text_btn_add">Tambah</string>
+    <string name="text_btn_my_store">Toko Saya</string>
+
+    <string name="text_value_phone">Telepon : %1$s</string>
+    <string name="btn_text_search">Cari</string>
+    <string name="result">Hasil</string>
+    <string name="search">Cari</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
+
+    <string name="dummy_animal_name">Nama Hewan</string>
+    <string name="dummy_user_name">Seseorang Pengguna</string>
+    <string name="dummy_user_email">seseorang@gmail.com</string>
+    <string name="dummy_user_phone">08xx-xxxx-xxx</string>
+    <string name="dummy_seller_name">Nama Penjual</string>
+    <string name="dummy_seller_city">Kota Penjual</string>
+    <string name="dummy_animal_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget rutrum velit. Sed vel purus in nibh facilisis maximus sit amet vitae lectus. Mauris interdum et elit sed congue. Aliquam maximus pharetra maximus. Fusce semper velit augue, eget condimentum velit ornare sed. Nulla vel metus leo.</string>
+
+    <string name="text_menu_delete">Hapus</string>
+
+    <string name="text_dialog_msg_delete">Apakah Anda yakin ingin menghapus produk ini?</string>
+
+    <string name="text_no">Tidak</string>
+    <string name="text_yes">Ya</string>
+
+    <string name="success">Sukses</string>
+    <string name="auth_failed">Otentikasi gagal.</string>
+    <string name="fill_the_text_field">Silakan Isi Kolom Teks</string>
+
+    <string name="choose_a_pic">Pilih Gambar</string>
+    <string name="camera_failed_msg">Tidak mendapatkan izin</string>
+
+    <string name="upcoming_features">Fitur-fitur yang akan datang</string>
+    <string name="theme">Tema</string>
+    <string name="language">Bahasa</string>
+    <string name="theme_title">Tema</string>
+    <string name="ok">OK</string>
+    <string name="btn_text_update">Perbarui</string>
+    <string name="retry">Coba lagi</string>
+    <string name="scan">pindai</string>
+    <string name="result_of_image_recognition">Hasil pengenalan gambar</string>
+
+    <string name="empty_input">%1$s hewan harus diisi</string>
+    <string name="empty_image">Silakan masukkan file gambar terlebih dahulu</string>
+
+    <string name="product_success_add">Produk berhasil ditambahkan</string>
+    <string name="product_failed_add">Gagal menambahkan produk</string>
+
+    <string name="product_success_update">Produk berhasil diperbarui</string>
+    <string name="product_failed_update">Gagal memperbarui produk</string>
+
+    <string name="product_success_delete">Produk berhasil dihapus</string>
+    <string name="product_failed_delete">Gagal menghapus produk</string>
+    <string name="no_product">Belum ada produk yang Anda jual</string>
+    <string name="edit_product">Ubah Produk</string>
+    <string name="add_product">Tambah Produk</string>
+    <string name="failed_to_load_user_data">Gagal memuat data pengguna</string>
+</resources>
