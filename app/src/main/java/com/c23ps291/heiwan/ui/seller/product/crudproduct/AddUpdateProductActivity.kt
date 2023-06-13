@@ -45,15 +45,12 @@ import java.util.UUID
 class AddUpdateProductActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddUpdateProductBinding
-
     private lateinit var auth: FirebaseAuth
-
     private var isSeller = false
     private var photoFile: File? = null
     private var isEdit = false
     private lateinit var idAnimal: String
     private lateinit var idUser: String
-
 
     private val addUpdateProductViewModel: AddUpdateProductViewModel by viewModels {
         ViewModelFactory(this)
@@ -115,9 +112,7 @@ class AddUpdateProductActivity : AppCompatActivity() {
 
             }
 
-
         }
-
 
     }
 
@@ -308,7 +303,6 @@ class AddUpdateProductActivity : AppCompatActivity() {
             val description = edtAnimalDescription.text.toString()
             val price = edtPrice.text.toString()
 
-
             var allInputAreFilled = false
 
             if (name.isEmpty()) {
@@ -410,34 +404,6 @@ class AddUpdateProductActivity : AppCompatActivity() {
                     }
                 }
             }
-        /*
-        addUpdateProductViewModel.setAddSeller(
-            idUser.toRequestBody("text/plain".toMediaType()),
-            nameUser.toRequestBody("text/plain".toMediaType()),
-            email.toRequestBody("text/plain".toMediaType()),
-            phone.toRequestBody("text/plain".toMediaType())).observe(this@AddUpdateProductActivity) {
-            when (it) {
-                is Resource.Loading -> showLoadingState(true)
-                is Resource.Success -> {
-                    showLoadingState(false)
-                    val isSuccess = it.data?.data?.affectedRows ?: 0
-                    if (isSuccess > 0) {
-                        addAnimal(name, description, price, imageMultipart)
-                    }
-                }
-
-                is Resource.Error -> {
-                    showLoadingState(false)
-                    Snackbar.make(
-                        binding.root as ViewGroup,
-                        getString(R.string.product_failed_add),
-                        Snackbar.LENGTH_LONG
-                    ).show()
-
-                }
-            }
-        }
-        */
     }
 
 
@@ -536,7 +502,6 @@ class AddUpdateProductActivity : AppCompatActivity() {
     companion object {
         const val TAG = "AddUpdateProduct"
         private const val REQUEST_CODE_PERMISSIONS = 10
-
 
         const val EXTRA_ID_ANIMAL = "extra_id_animal"
 

@@ -26,4 +26,7 @@ data class AnimalEntity(
     @ColumnInfo("price")
     val price: String?,
 
+    @ColumnInfo("uuid")
+    val uuid: String?,
+
     ) : Parcelable

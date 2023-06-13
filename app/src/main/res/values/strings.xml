@@ -98,5 +98,6 @@
     <string name="edit_product">Edit Product</string>
     <string name="add_product">Add Product</string>
     <string name="failed_to_load_user_data">Failed to load user data</string>
+    <string name="empty_state_msg">Oopps its empty…</string>
 
 </resources>

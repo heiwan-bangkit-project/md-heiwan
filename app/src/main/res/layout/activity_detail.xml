@@ -36,8 +36,7 @@
             android:layout_height="260dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/backgrounds/scenic"
-            android:scaleType="matrix" />
+            tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView
             android:id="@+id/tvAnimalPrice"
@@ -111,16 +110,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Nama Seller" />
 
-            <TextView
-                android:id="@+id/tvSellerCity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:maxWidth="180dp"
-                android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/sellerImg"
-                app:layout_constraintTop_toBottomOf="@+id/tvSellerName"
-                tools:text="Seller City" />
 
             <ProgressBar
                 android:id="@+id/progressBar"

@@ -43,11 +43,7 @@ class AnimalListAdapter :
                 }
             }
             itemView.setOnClickListener {
-//                val optionsCompat: ActivityOptionsCompat =
-//                    ActivityOptionsCompat.makeSceneTransitionAnimation(
-//                        itemView.context as Activity,
-//                        Pair(binding.ivPhoto, "imageStory"),
-//                    )
+
                 val intent = Intent(itemView.context, DetailActivity::class.java)
                 intent.putExtra(DetailActivity.EXTRA_DATA, data.id)
                 itemView.context.startActivity(intent)

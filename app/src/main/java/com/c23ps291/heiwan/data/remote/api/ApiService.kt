@@ -91,20 +91,4 @@ interface ApiService {
     ): ProductsResponse
 
 
-    //    @Multipart
-//    @POST("update-animal")
-//    suspend fun updateAnimal(
-//        @Header("Authorization") auth: String,
-//        @Part file: MultipartBody.Part,
-//        @Part("description") description: RequestBody
-//    ) : UploadResponse
-
-    //    @Multipart
-//    @POST("delete-animal")
-//    suspend fun updateAnimal(
-//        @Header("Authorization") auth: String,
-//        @Part file: MultipartBody.Part,
-//        @Part("id") description: RequestBody
-//    ) : UploadResponse
-
 }

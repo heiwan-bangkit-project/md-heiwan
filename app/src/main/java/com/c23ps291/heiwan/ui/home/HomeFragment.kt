@@ -43,8 +43,17 @@ class HomeFragment : Fragment() {
             }
         )
         viewModel.getListAnimal().observe(requireActivity()) {
+            if(adapter.itemCount == 0) {
+                showEmptyState(true)
+            } else {
+                showEmptyState(false)
+            }
             adapter.submitData(lifecycle, it)
         }
+    }
+
+    private fun showEmptyState(isLoading: Boolean) {
+        binding.emptyState.root.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     override fun onDestroyView() {

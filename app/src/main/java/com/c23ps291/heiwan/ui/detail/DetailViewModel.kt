@@ -9,4 +9,6 @@ class DetailViewModel(repository: HeiwanRepository) : ViewModel() {
     private val repo = repository
 
     fun getAnimal(id: String) = repo.getDetailAnimal(id).asLiveData()
+
+    fun getSellerByID(uuid: String) = repo.getDetailSeller(uuid).asLiveData()
 }

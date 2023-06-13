@@ -98,4 +98,6 @@
     <string name="edit_product">Ubah Produk</string>
     <string name="add_product">Tambah Produk</string>
     <string name="failed_to_load_user_data">Gagal memuat data pengguna</string>
+    <string name="empty_state_msg">Oopps ini kosong…</string>
+
 </resources>

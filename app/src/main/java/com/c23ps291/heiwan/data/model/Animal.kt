@@ -1,6 +1,7 @@
 package com.c23ps291.heiwan.data.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
@@ -21,5 +22,8 @@ data class Animal(
 
     @field:SerializedName("price")
     val price: String?,
+
+    @field:SerializedName("uuid")
+    val uuid: String?,
 
     ) : Parcelable

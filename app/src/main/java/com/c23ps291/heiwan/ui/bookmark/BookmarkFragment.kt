@@ -24,7 +24,6 @@ class BookmarkFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvAnimal.layoutManager = GridLayoutManager(requireActivity(), 2)
     }
 
     override fun onDestroyView() {

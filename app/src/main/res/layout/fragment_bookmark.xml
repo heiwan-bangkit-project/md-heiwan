@@ -6,15 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.bookmark.BookmarkFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_animal"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_divider"
-        app:spanCount="2"
-        tools:listitem="@layout/item_animal" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/upcoming_features"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 </FrameLayout>

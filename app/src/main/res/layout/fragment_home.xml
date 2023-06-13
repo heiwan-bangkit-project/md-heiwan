@@ -16,4 +16,9 @@
         app:spanCount="2"
         tools:listitem="@layout/item_animal" />
 
+    <include
+        android:id="@+id/emptyState"
+        layout="@layout/empty_state"
+        android:visibility="gone"/>
+
 </FrameLayout>

@@ -9,4 +9,6 @@ class ListProductViewModel(repository: HeiwanRepository) : ViewModel() {
     private val repo = repository
 
     fun getProducts(id: String) = repo.getProducts(id).asLiveData()
+
+    fun getSellerByID(uuid: String) = repo.getDetailSeller(uuid).asLiveData()
 }

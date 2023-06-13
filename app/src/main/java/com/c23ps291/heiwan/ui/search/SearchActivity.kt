@@ -92,7 +92,13 @@ class SearchActivity : AppCompatActivity() {
                 is Resource.Loading -> showLoadingState(true)
                 is Resource.Success -> {
                     showLoadingState(false)
-                    it.data?.data?.let { it1 -> populateData(it1) }
+                    val result = it.data?.data
+                    if (result?.isNotEmpty() == true) {
+                        populateData(result)
+                        showEmptyState(false)
+                    } else {
+                        showEmptyState(true)
+                    }
                 }
 
                 is Resource.Error -> {
@@ -124,6 +130,10 @@ class SearchActivity : AppCompatActivity() {
 
     private fun showLoadingState(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
+    private fun showEmptyState(isLoading: Boolean) {
+        binding.emptyState.root.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

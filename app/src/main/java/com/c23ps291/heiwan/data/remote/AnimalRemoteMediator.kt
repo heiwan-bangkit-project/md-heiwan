@@ -73,7 +73,8 @@ class AnimalRemoteMediator(
                         it.name,
                         it.description,
                         it.image,
-                        it.price
+                        it.price,
+                        it.uuid
                     )
                 }
                 database.animalDao().insertAnimal(mapData)

@@ -133,40 +133,6 @@ class ListProductActivity : AppCompatActivity() {
         }
     }
 
-    /*
-    private fun getDataDetailSeller(id: String) {
-        viewModel.getDetailSeller(id).observe(this@ListProductActivity) {
-            when (it) {
-                is Resource.Loading -> showLoadingState(true)
-                is Resource.Success -> {
-                    showLoadingState(false)
-                    val sizeSeller = it.data?.seller?.size ?: 0
-                    if (sizeSeller > 0) {
-                        val idSeller = it.data?.seller?.get(0)?.id
-                        if (idSeller != null) {
-                            getDataProducts(idSeller)
-                        } else {
-                            Log.e("TAG", "null $idSeller")
-                        }
-                        Log.e("TAG", "")
-                    }
-
-
-                }
-
-                is Resource.Error -> {
-                    showLoadingState(false)
-                    Toast.makeText(
-                        this@ListProductActivity,
-                        it.message,
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-        }
-    }
-*/
-
     private fun showLoadingState(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
